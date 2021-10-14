@@ -10,11 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name = "produtos")
 public class Produto {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -22,16 +21,14 @@ public class Produto {
 	private String descricao;
 	private BigDecimal preco;
 	private LocalDate dataCadastro = LocalDate.now();
-	
+
 	@ManyToOne
 	private Categoria categoria;
-	
+
 	public Produto() {
-	
+
 	}
-	
-	
-	
+
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
 		this.nome = nome;
 		this.descricao = descricao;
@@ -88,5 +85,3 @@ public class Produto {
 	}
 
 }
-
-
